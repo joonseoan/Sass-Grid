@@ -1,0 +1,127 @@
+.container {
+    background-color: #eeeeee;
+    width: 1000px;
+    // height: 1000px;
+    margin: 30px auto;
+
+    // define "display: grid" in parent class
+    display: grid;
+    
+    // [Row]
+    
+    // 3)
+    // we can't define row heght here.
+    // Instead we need to define height above.
+    // grid-template-rows: repeat(2, 1fr);
+
+    // 2)
+    // 2. 150px: first and second rows with height 150px
+    // when we need to define height in a row (cell) base
+    grid-template-rows: repeat(2, 150px);
+
+    
+    // 1)
+    // it defines row height
+    // first 150px : first row height which is Orange
+    // second 150px: the second row height which is Green
+    // the third 150px: the third row height which is Vilote
+    // grid-template-rows: 150px 150px 150px ........;
+    
+    // here we defines two rows only
+    // grid-template-rows: 150px 150px;
+
+    // [Column]
+
+    // 3)
+
+    // When we want to have diffetn widths but fill out the row
+    // FYI, it is also similar to "flex: 1, flex: 2 ..."
+    // grid-template-columns: 1fr 2fr 1fr;
+    // grid-template-columns: 1fr 3fr 1fr;
+    
+    // Even working with percentage!!!!!!!!!!!!
+    // grid-template-columns: 50% 2fr 1fr;
+
+    // When we want to have same widths and fill out the row.
+    grid-template-columns: repeat(3, 1fr);
+
+
+    // When we would like to the last column occupies all the rest of the space.
+    // 1fr: it is similar to "flex: 1"
+    // grid-template-columns: 300px 150px 1fr;
+
+    // it is called "Track"??
+    // when we wnat to change the width only in the first column
+    // grid-template-columns: 300px repeat(2, 150px);
+
+    // when we wnat to change the width only in the third column
+    // grid-template-columns: repeat(2, 150px) 300px;
+
+    // 2)
+    // 3. 150px: first, second and third columns with width 150px 
+    // grid-template-columns: repeat(3, 150px);
+
+    // 1)
+    // it defines column width
+    // first 150px : first column width
+    // second 150px: the second column width
+    // the third 150px: the third column width 
+    // grid-template-columns: 150px 150px 150px ........;
+
+    // grid-template-columns: 150px 150px 150px;
+
+    /* 
+        1. Orange      2. Green     3. Violet
+
+
+
+        -----------------------------------------------
+            Gutter
+        ------------------------------------------------
+
+        4. Pink        5. Blue      6.Brown
+    
+
+    
+    */
+
+    // [Gutter]
+    // grid-row-gap: 30px;
+    // grid-column-gap: 50px;
+
+    // it is for both row and column.
+    grid-gap: 30px;
+
+}
+
+.item {
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+
+    &--1 {
+        background-color: orangered;
+    }
+
+    &--2 {
+        background-color: yellowgreen; 
+    }
+
+    &--3 {
+        background-color: blueviolet;
+    }
+
+    &--4 {
+        background-color: palevioletred;
+    }
+
+    &--5 {
+        background-color: royalblue;
+    }
+
+    &--6 {
+        background-color: goldenrod;
+    }
+}
+
