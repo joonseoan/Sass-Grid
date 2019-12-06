@@ -3,65 +3,65 @@
 
 // TOOL 3: AREA
 
-.container {
-    width: 1000px;
-    margin: 30px auto;
+// .container {
+//     width: 1000px;
+//     margin: 30px auto;
 
-    display: grid;
-    grid-template-rows: 100px 200px 400px 100px;
-    grid-template-columns: repeat(3, 1fr) 200px;
-    grid-gap: 30px;
-    // when we make empty space, we use "."
-    grid-template-areas: "head head head ." 
-                        "box1 box2 box3 side"
-                        "main main main side"
-                        "foot foot foot foot";     
-    // Name Grid LINE with area
-    // grid-template-areas: "head head head head" 
-    //                      "box1 box2 box3 side"
-    //                      "main main main side"
-    //                      "foot foot foot foot";     
+//     display: grid;
+//     grid-template-rows: 100px 200px 400px 100px;
+//     grid-template-columns: repeat(3, 1fr) 200px;
+//     grid-gap: 30px;
+//     // when we make empty space, we use "."
+//     grid-template-areas: "head head head ." 
+//                         "box1 box2 box3 side"
+//                         "main main main side"
+//                         "foot foot foot foot";     
+//     // Name Grid LINE with area
+//     // grid-template-areas: "head head head head" 
+//     //                      "box1 box2 box3 side"
+//     //                      "main main main side"
+//     //                      "foot foot foot foot";     
 
-    & > * {
-        background-color: orangered;
-        padding: 20px;
-        color: white;
-        font-size: 30px;
-        font-family: sans-serif;
-    }
+//     & > * {
+//         background-color: orangered;
+//         padding: 20px;
+//         color: white;
+//         font-size: 30px;
+//         font-family: sans-serif;
+//     }
 
-    .item {
+//     .item {
 
-        &--1 {
-            grid-area: head;
-        }
+//         &--1 {
+//             grid-area: head;
+//         }
 
-        &--2 {
-            grid-area: box1
-        }
+//         &--2 {
+//             grid-area: box1
+//         }
 
-        &--3 {
-            grid-area: box2
-        }
+//         &--3 {
+//             grid-area: box2
+//         }
         
-        &--4 {
-            grid-area: box3    
-        }
+//         &--4 {
+//             grid-area: box3    
+//         }
 
-        &--5 {
-            grid-area: side; 
-        }
+//         &--5 {
+//             grid-area: side; 
+//         }
     
-        &--6 {
-            grid-area: main;
-        }
+//         &--6 {
+//             grid-area: main;
+//         }
     
-        &--7 {
-            grid-area: foot;
-        }
-    }
+//         &--7 {
+//             grid-area: foot;
+//         }
+//     }
 
-}
+// }
 
 
 
