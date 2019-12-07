@@ -1,149 +1,149 @@
-.container {
-    // width: 1000px;
-    // margin: 30px auto;
-    // background-color: #dddddd;
+// .container {
+//     // width: 1000px;
+//     // margin: 30px auto;
+//     // background-color: #dddddd;
 
-    // display: grid;
+//     // display: grid;
     
-    // // we have 8 divs
-    // // [ Explicit ]
-    // // however, we just defined 4 items.
-    // // These 4 items are explicit grids.
-    // grid-template-rows: repeat(2, 150px);
-    // grid-template-columns: repeat(2, 1fr);
+//     // // we have 8 divs
+//     // // [ Explicit ]
+//     // // however, we just defined 4 items.
+//     // // These 4 items are explicit grids.
+//     // grid-template-rows: repeat(2, 150px);
+//     // grid-template-columns: repeat(2, 1fr);
 
-    // [ Implicit ]
-    // The remaining items will be displayed
-    //  when the parent space has spare spaces.
-    //  these are implicit grids.
-    // These items are displayed in same format as in the explicit grids
-    //  "to fit the space spared". Therefore, the height is diffrent.
+//     // [ Implicit ]
+//     // The remaining items will be displayed
+//     //  when the parent space has spare spaces.
+//     //  these are implicit grids.
+//     // These items are displayed in same format as in the explicit grids
+//     //  "to fit the space spared". Therefore, the height is diffrent.
 
-    // we can change the height of implicit grids as followed.
-    // grid-auto-rows: 100px;
+//     // we can change the height of implicit grids as followed.
+//     // grid-auto-rows: 100px;
     
-    // make implicit grids row followed the explicit grids (defualt)
-    // grid-auto-flow: row;
+//     // make implicit grids row followed the explicit grids (defualt)
+//     // grid-auto-flow: row;
 
-    // it can control column and row flollowed by explicit grids
-    // make implicit grids column followed the explicit grids
+//     // it can control column and row flollowed by explicit grids
+//     // make implicit grids column followed the explicit grids
 
-    // In this case, the height is stretched
-    // Therefore,
-    /* 
-        grid-auto-rows: 100px is not meaningful
-    */
-    // grid-auto-flow: column;
+//     // In this case, the height is stretched
+//     // Therefore,
+//     /* 
+//         grid-auto-rows: 100px is not meaningful
+//     */
+//     // grid-auto-flow: column;
     
-    // .5fr compared to 1fr in grid-template-columns: 1fr; above
-    // It will the existing explicit grid's width shrinked. 485 -> 333
-    // grid-auto-columns: .5fr;
+//     // .5fr compared to 1fr in grid-template-columns: 1fr; above
+//     // It will the existing explicit grid's width shrinked. 485 -> 333
+//     // grid-auto-columns: .5fr;
 
 
-    // [Aligining Grid Items ] 
-    // width: 1000px;
-    // margin: 30px auto;
-    // background-color: #dddddd;
+//     // [Aligining Grid Items ] 
+//     // width: 1000px;
+//     // margin: 30px auto;
+//     // background-color: #dddddd;
 
-    // display: grid;
-    // grid-template-rows: repeat(2, 150px);
-    // grid-template-columns: repeat(2, 1fr);
+//     // display: grid;
+//     // grid-template-rows: repeat(2, 150px);
+//     // grid-template-columns: repeat(2, 1fr);
 
-    // // implicit row
-    // grid-auto-columns: .5fr;
-    // grid-auto-flow: row;
-    // grid-gap: 30px;
+//     // // implicit row
+//     // grid-auto-columns: .5fr;
+//     // grid-auto-flow: row;
+//     // grid-gap: 30px;
 
-    // // In grid-auto-flow : columns / rows : it makes the grid vertically middle
-    // //  with the minimum height.
-    // align-items: center;
+//     // // In grid-auto-flow : columns / rows : it makes the grid vertically middle
+//     // //  with the minimum height.
+//     // align-items: center;
 
-    // //  with the minimum height.
-    // // align-items: start;
-    // // align-items: end;
+//     // //  with the minimum height.
+//     // // align-items: start;
+//     // // align-items: end;
 
-    // // make the grid fills up the parent space
-    // // align-items: stretch;
+//     // // make the grid fills up the parent space
+//     // // align-items: stretch;
 
-    // // horizontally center with min width
-    // // Please note that in grid, no justify-content: !!!!;
-    // justify-items: center;
+//     // // horizontally center with min width
+//     // // Please note that in grid, no justify-content: !!!!;
+//     // justify-items: center;
     
-    //  with the minimum width.
-    // justify-items: start;
-    // justify-items: end;
-    // fills up the space
-    // justify-items: stretch;
+//     //  with the minimum width.
+//     // justify-items: start;
+//     // justify-items: end;
+//     // fills up the space
+//     // justify-items: stretch;
 
 
-    // [align grid track to grind container]
-    // width: 1000px;
-    // height: 1000px;
-    margin: 30px auto;
-    background-color: #dddddd;
+//     // [align grid track to grind container]
+//     // width: 1000px;
+//     // height: 1000px;
+//     margin: 30px auto;
+//     background-color: #dddddd;
 
-    display: grid;
-    // grid-template-rows: repeat(2, 150px);
-    // grid-template-columns: repeat(2, 1fr);
+//     display: grid;
+//     // grid-template-rows: repeat(2, 150px);
+//     // grid-template-columns: repeat(2, 1fr);
     
-    grid-gap: 30px;
+//     grid-gap: 30px;
 
-    // implicit row
-    grid-auto-rows: 80px;
-    // [ IMPORTANT ] 
-    // dense: remove the space that has empty
-    grid-auto-flow: row dense;
-    grid-auto-columns: .5fr;
+//     // implicit row
+//     grid-auto-rows: 80px;
+//     // [ IMPORTANT ] 
+//     // dense: remove the space that has empty
+//     grid-auto-flow: row dense;
+//     grid-auto-columns: .5fr;
 
-    // [ INSIDE OF ITEM TO CONTROL CONTENTS IN ITEM ]
-    // only working in the item
-    // align-items: center;
-    // justify-items: center;
+//     // [ INSIDE OF ITEM TO CONTROL CONTENTS IN ITEM ]
+//     // only working in the item
+//     // align-items: center;
+//     // justify-items: center;
     
-    // larger space than the grids, for instance
-    width: 1000px;
-    height: 1000px;
-    grid-template-rows: repeat(2, 100px);
-    grid-template-columns: repeat(2, 200px);
+//     // larger space than the grids, for instance
+//     width: 1000px;
+//     height: 1000px;
+//     grid-template-rows: repeat(2, 100px);
+//     grid-template-columns: repeat(2, 200px);
 
-    // [ OUTSIDE OF ITEMS TO POSITION TIEM ]
-    // working in container which is outside of item
-    // horizontally. it is same as in the flex box
-    // justify-content: space-between; 
-    justify-content: center; // center, start, space-around, space-between, space-evenly
+//     // [ OUTSIDE OF ITEMS TO POSITION TIEM ]
+//     // working in container which is outside of item
+//     // horizontally. it is same as in the flex box
+//     // justify-content: space-between; 
+//     justify-content: center; // center, start, space-around, space-between, space-evenly
     
-    // horizontally
-    align-content: center; // center, start, space-around, space-between, space-evenly
-    // align-content: space-between; // center, start, space-around, space-between, space-evenly
+//     // horizontally
+//     align-content: center; // center, start, space-around, space-between, space-evenly
+//     // align-content: space-between; // center, start, space-around, space-between, space-evenly
 
 
-    .item {
-        padding: 10px;
-        color: white;
-        font-family: sans-serif;
-        font-size: 30px;
-        background-color: orangered;
+//     .item {
+//         padding: 10px;
+//         color: white;
+//         font-family: sans-serif;
+//         font-size: 30px;
+//         background-color: orangered;
 
-        // [Aligining Grid Items ] 
-        &--4 {
-            background-color: crimson;
-            grid-row: 2 / span 3;
+//         // [Aligining Grid Items ] 
+//         &--4 {
+//             background-color: crimson;
+//             grid-row: 2 / span 3;
             
-            // overriding aligning item above
-            // vertical
-            // align-self: start; // center;// stretch; // center, start, end
-            // horizontal
-            // justify-self: start; // stretch // center, start, end
-        }
+//             // overriding aligning item above
+//             // vertical
+//             // align-self: start; // center;// stretch; // center, start, end
+//             // horizontal
+//             // justify-self: start; // stretch // center, start, end
+//         }
 
-        &--6 {
-            background-color: lightcoral;
-            grid-row: 2 / span 2;
-        }
+//         &--6 {
+//             background-color: lightcoral;
+//             grid-row: 2 / span 2;
+//         }
 
-        &--7 {
-            background-color: palevioletred;
-            grid-column: 1 / -1;
-        }
-    }    
-}
+//         &--7 {
+//             background-color: palevioletred;
+//             grid-column: 1 / -1;
+//         }
+//     }    
+// }
