@@ -1,0 +1,7 @@
+@import '../../Scss/base';
+
+.realtors {
+    background-color: $color-secondary;
+    // col-start : defines 7th column line as a start point
+    grid-column: col-start 7 / full-end;
+}

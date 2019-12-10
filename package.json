@@ -8,7 +8,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start ",
+    "start": "react-scripts start",
     "watch-sass": "node-sass public/css/style.scss public/css/style.css -w",
     "devserver": "live-server",
     "dev": "npm-run-all --parallel start watch-sass devserver",

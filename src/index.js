@@ -7,5 +7,5 @@ import Challenge from './Grid_PlayGround/Challenge';
 import ImplicitExplicitGrid from './Grid_PlayGround/ImplicitExplicitGrid';
 import MinMax from './Grid_PlayGround/MinMax';
 
-ReactDOM.render(<MinMax />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 

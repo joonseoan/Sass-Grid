@@ -1,0 +1,37 @@
+@import './base';
+
+// [ IMPORTANT ]
+// making placeholder!
+%heading {
+    font-family: $font-display;
+    font-weight: 400;         
+}
+
+// extend by using placeholder!
+.head-1 {
+    @extend %heading;          
+}
+
+.head-2 {
+    @extend %heading;
+}
+
+.head-3 {
+    @extend %heading;
+}
+
+.head-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+
+    // modified class
+    //  to make the differen colors
+    &--light {
+        color: $color-grey-light-1;
+    }
+
+    &--dark {
+        color: $color-grey-dark-1;
+    }
+}
+

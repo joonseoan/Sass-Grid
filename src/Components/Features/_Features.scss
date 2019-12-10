@@ -1,0 +1,78 @@
+@import '../../Scss/base';
+
+.features {
+    grid-column: center-start / center-end;
+    
+    margin: 15rem 0;
+    
+    display: grid;
+    
+    // [ IMPORTANT ]
+    // responsive ui
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)) ;
+    
+    // We do not need to specify rows in this case.
+    // 140px ==> 33rem   
+    // grid-template-columns: repeat(3, minmax(140px, 1fr));
+
+    grid-gap: 6rem;
+
+    // controls items inside of item
+    align-items: start;
+
+    // This featue class will be used in another component
+    .feature {
+
+        display: grid;
+
+        // [ IMPORTANT ]
+        // Without the grid-template-row: we must use span 
+        //  for one row to expand to the end!!!!!!!!!!! 
+        // grid-template-rows: repeat(2, min-content);
+
+        // [IMPORTANT]
+        // It is for columns but we need to use min-content
+        //  because we should not put a space beteen icon and title
+        //  and because we icon size is fixed.
+        grid-template-columns: min-content 1fr;
+
+        // Use separate gap for row and column 
+        grid-row-gap: 1.5rem;
+        grid-column-gap: 2.5rem;
+
+        // [Control grid]
+        // align-content: top;
+        // justify-content: center;
+        
+        // [Control contents inside of grid]
+        //justify-items: center;
+        // align-items: start;
+        
+        &__icon {
+            // Remember! To change svg icon, we must use "fill"
+            fill: $color-primary;
+            width: 4.5rem;
+            height: 4.5rem;
+
+            // [ Really IMPORTANT!!!!!!!!!!!!!!!!]
+            // -1 is not working here
+            //  because it is still implicit row.
+            // In parent, we did not define the grid-template-row!!!!
+            
+            // In this case, we must use span!!!!!!!!!!
+            grid-row: 1 / span 2;
+
+            // put icons little higher to be in line with title.
+            transform: translateY(-1rem);
+        }
+
+        &__text {
+            font-size: 1.7rem;
+
+            // [ IMPORTANT ]!!!!!!!!!!!!!!!!!!!!!1
+            // we should control the row in &__icon
+            // my stupid code
+            // grid-column: 2 / 3;
+        }
+    }
+}

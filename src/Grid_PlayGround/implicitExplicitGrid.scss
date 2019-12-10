@@ -90,7 +90,8 @@
 
 //     // implicit row
 //     grid-auto-rows: 80px;
-//     // [ IMPORTANT ] 
+//     
+        // [ IMPORTANT ] 
 //     // dense: remove the space that has empty
 //     grid-auto-flow: row dense;
 //     grid-auto-columns: .5fr;
@@ -112,7 +113,7 @@
 //     // justify-content: space-between; 
 //     justify-content: center; // center, start, space-around, space-between, space-evenly
     
-//     // horizontally
+//     // vertically
 //     align-content: center; // center, start, space-around, space-between, space-evenly
 //     // align-content: space-between; // center, start, space-around, space-between, space-evenly
 

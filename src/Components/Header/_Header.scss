@@ -1,0 +1,9 @@
+@import '../../Scss/base';
+
+.header {
+ background-color: $color-grey-light-2;
+ 
+// [ IMPORTANT ]
+//  defines "6th column line in "col-start to col-end"" as a col-end
+ grid-column: full-start / col-end 6;
+}
