@@ -33,7 +33,7 @@ const Home = props => {
                     </svg>
                     <p>$1,200,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
             <div className="home">
                 <img src="img/house-2.jpeg" alt="house 1" className="home__img" />
@@ -65,7 +65,7 @@ const Home = props => {
                     </svg>
                     <p>$950,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
             <div className="home">
                 <img src="img/house-3.jpeg" alt="house 1" className="home__img" />
@@ -97,7 +97,7 @@ const Home = props => {
                     </svg>
                     <p>$2,200,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
             <div className="home">
                 <img src="img/house-4.jpeg" alt="house 1" className="home__img" />
@@ -129,7 +129,7 @@ const Home = props => {
                     </svg>
                     <p>$1,550,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
             <div className="home">
                 <img src="img/house-5.jpeg" alt="house 1" className="home__img" />
@@ -161,7 +161,7 @@ const Home = props => {
                     </svg>
                     <p>$3,750,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
             <div className="home">
                 <img src="img/house-6.jpeg" alt="house 1" className="home__img" />
@@ -193,7 +193,7 @@ const Home = props => {
                     </svg>
                     <p>$5,560,000</p>
                 </div>
-                <button className="cta">Contact Realtor</button>
+                <button className="btn btn__home">Contact Realtor</button>
             </div>
         </div>
     );

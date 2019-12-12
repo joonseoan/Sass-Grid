@@ -2,10 +2,7 @@
 
 .stories {
     &__pictures {
-        // background-color: $color-primary;
         grid-column: full-start / col-end 4;
-
-        // background-image: url(../../../public/img/back.jpg);
 
         display: grid;
         grid-template-rows: repeat(6, 1fr);
@@ -14,10 +11,7 @@
         // We can control this issue in the parent by using "align-item"
         align-items: center;
 
-
-
-        // conbination of gradient and pitrue
-        
+        // conbination of gradient and pitrue        
         // Same color gradient ===> No gradient effect!!!
         // rgba($color-primary, .5),
         // rgba($color-primary, .5))
@@ -27,11 +21,10 @@
                 // in bottom layer
                 url("/img/back.jpg");
 
-        position: relative;
-
         &__img--1 {
 
-            //for flexible, use %
+            // for flexible, use %
+            // when we use
             width: 100%;
 
             // [ IMPORTANT ]
