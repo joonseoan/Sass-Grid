@@ -9,7 +9,12 @@
 
 // extend by using placeholder!
 .head-1 {
-    @extend %heading;          
+    @extend %heading;
+    font-size: 4.5rem;
+    color: $color-grey-light-1;
+    // it is inherited. 
+    // We need to fix it when we have two lines
+    line-height: 1;
 }
 
 .head-2 {

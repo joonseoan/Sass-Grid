@@ -1,9 +1,63 @@
 @import '../../Scss/base';
 
+
 .header {
- background-color: $color-grey-light-2;
- 
-// [ IMPORTANT ]
-//  defines "6th column line in "col-start to col-end"" as a col-end
- grid-column: full-start / col-end 6;
+    background-color: $color-grey-dark-1;
+    // [ IMPORTANT ]
+    //  defines "6th column line in "col-start to col-end"" as a col-end
+    grid-column: full-start / col-end 6;
+    
+    // ---- //
+    background-image: linear-gradient(
+        rgba($color-secondary, .93),
+        rgba($color-secondary, .93)),
+        url("/img/hero.jpeg");
+        
+    // --- // only for backgroun-image to cover the defined element size
+    background-size: cover;
+    // to make a picture at the center
+    background-position: center;
+    padding: 8rem;
+    // padding-top: 4rem; // why?
+
+    display: grid;
+    // grid-template-rows: max-content repeat(3, min-content) max-content;
+
+    // [ IMPORTANT!!!!!!!]
+    // Not as long as the parent definex grid-template-rows: min-content;
+    // defining a row means that it will take up the max space as much as possible!!
+    //   then, the rest of the rows will take up the min space .
+
+    // It is same as in the column
+    grid-template-rows: 1fr min-content 6rem 1fr;
+    
+    // [ IMPORTANT ]
+    // To make a centric content on the basis of max-content!!!!
+    // It makes to make a more room inside of the parent
+    grid-template-columns: max-content;
+    grid-row-gap: 1.5rem;
+    
+    justify-content: center;
+
+    &__logo {
+        height: 3rem;
+        justify-self: center;
+    }
+
+    .btn--header {
+        align-self: start;
+        justify-self: start;
+    }
+
+    &__seenon-text {
+        align-self: end;        
+    }
+
+    &__seenon-logos {
+        display: flex;
+        justify-content: space-around;        
+        img {
+            height: 2.5rem;
+        }
+    }
 }

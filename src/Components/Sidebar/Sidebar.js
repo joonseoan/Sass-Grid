@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = props => {
     return(
         <div className="sidebar">
-            SideBar
+            <button className="nav-btn" />
         </div>
     );
 }

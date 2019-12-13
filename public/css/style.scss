@@ -39,7 +39,7 @@ body {
     // [ IMPORTANT ]
     // vh: it is only effected by browser's height.
     // vw: as width decrease, view port height decrease.
-    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 45vh min-content 40vw repeat(3, min-content);
     
     // [ ---------- Columns ---------- ]
     // container value: 1140 (normally)

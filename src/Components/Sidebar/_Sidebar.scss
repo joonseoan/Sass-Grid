@@ -4,4 +4,49 @@
     background-color: $color-primary;
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 / -1;
+    
+    // to make the bars at the center
+    // Don't be confused. It has a single child.
+    // Each bar is not a direct child.
+    // Hence, we should not use "flex-direction: column;" 
+    display: flex;
+    justify-content: center;
+
+    .nav-btn {
+        border: none;
+        border-radius: 0;
+        
+        // btn parent itself is a bar
+        background-color: #ffffff;
+        // no rem because in responsive, height is nto matter.
+        height: 2px;
+        width: 4.5rem;
+
+        margin-top: 4rem;
+    
+        // adding two additional bar
+// ----------- // [ Important ] each bar position is slightly different.
+        &::before,
+        &::after {
+            content: "";
+            background-color: #ffffff;
+            height: 2px;
+            width: 4.5rem;
+            display: block;
+        }
+        
+        // Same child element as above
+        // move up the bar in &::before
+        &::before {
+            transform: translateY(-1.5rem);
+        }
+        
+        // Same child element as above    
+        // move down the bar in &::after
+        &::after {
+// ----------- // Therefore, we need to put slightly deffernt value (not 1.5) here.            
+            transform: translateY(1.3rem);
+        }
+    }
 }
+
