@@ -1,7 +1,60 @@
 @import '../../Scss/base';
 
+
+
 .realtors {
     background-color: $color-secondary;
     // col-start : defines 7th column line as a start point
     grid-column: col-start 7 / full-end;
+
+    padding: 8rem;
+
+    // [ IMPORTANT ]
+    // centering a single grid inside of a grid by using -content
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    grid-row-gap: 2rem;
+
+    // text-align: center;
+    // margin-bottom: 3rem;
+
+    &__list {
+        // margin-top: 2rem;
+
+        display: grid;
+        grid-template-columns: min-content max-content;
+        grid-column-gap: 2rem;
+
+        // header and realtor which are prent tab has vh!!!
+        //  so whenever it decreases or increases
+        //  grid-row-gap now can be changes as we put "vh" instead of rem;
+        grid-row-gap: 5vh;
+        align-items: center;
+
+        &__img {
+            width: 7rem;
+            // do not need to specify
+            // height: 6rem;
+            border-radius: 50%;
+        }
+
+        &__details {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            
+            &__sold {
+
+                text-transform: uppercase;
+                color: $color-grey-light-2;
+                margin-top: -3px;
+
+            }
+
+        }
+
+
+    }
 }

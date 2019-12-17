@@ -30,13 +30,14 @@
 
     // It is same as in the column
     grid-template-rows: 1fr min-content 6rem 1fr;
+    grid-row-gap: 1.5rem;
     
     // [ IMPORTANT ]
     // To make a centric content on the basis of max-content!!!!
     // It makes to make a more room inside of the parent
+    // just one column
     grid-template-columns: max-content;
-    grid-row-gap: 1.5rem;
-    
+
     justify-content: center;
 
     &__logo {
@@ -50,14 +51,44 @@
     }
 
     &__seenon-text {
-        align-self: end;        
+        
+        align-self: end;
+        font-size: 1.5rem;
+        color: $color-grey-dark-2;
+        
+        // [IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! The MOST]
+        // The children inside of a html tag can be implemented on the basis of grid!!!
+        display: grid;
+        // grid-template-rows: repeat(3, min-content);
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 2rem;
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: "";
+            // must be a block / inline-block to be a grid
+            display: block;
+            height: 1px;
+            background-color: currentColor;
+        }
+        
     }
 
     &__seenon-logos {
-        display: flex;
-        justify-content: space-around;        
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+
+        // 1)
+        // display: flex;
+        // justify-content: space-around;        
         img {
             height: 2.5rem;
+            // [ IMPORTANT ]: Brightness Contronl only
+            filter: brightness(70%);
         }
     }
 }
