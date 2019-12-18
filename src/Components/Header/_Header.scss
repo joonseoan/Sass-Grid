@@ -1,13 +1,12 @@
 @import '../../Scss/base';
 
-
 .header {
     background-color: $color-grey-dark-1;
     // [ IMPORTANT ]
     //  defines "6th column line in "col-start to col-end"" as a col-end
     grid-column: full-start / col-end 6;
     
-    // ---- //
+    // --------- //
     background-image: linear-gradient(
         rgba($color-secondary, .93),
         rgba($color-secondary, .93)),
@@ -15,8 +14,10 @@
         
     // --- // only for backgroun-image to cover the defined element size
     background-size: cover;
+    
     // to make a picture at the center
     background-position: center;
+    
     padding: 8rem;
     // padding-top: 4rem; // why?
 
@@ -29,14 +30,15 @@
     //   then, the rest of the rows will take up the min space .
 
     // It is same as in the column
-    grid-template-rows: 1fr min-content 6rem 1fr;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
     grid-row-gap: 1.5rem;
-    
+
     // [ IMPORTANT ]
     // To make a centric content on the basis of max-content!!!!
     // It makes to make a more room inside of the parent
     // just one column
-    grid-template-columns: max-content;
+    // grid-template-columns: max-content;
 
     justify-content: center;
 
@@ -45,13 +47,7 @@
         justify-self: center;
     }
 
-    .btn--header {
-        align-self: start;
-        justify-self: start;
-    }
-
     &__seenon-text {
-        
         align-self: end;
         font-size: 1.5rem;
         color: $color-grey-dark-2;
@@ -72,7 +68,6 @@
             height: 1px;
             background-color: currentColor;
         }
-        
     }
 
     &__seenon-logos {
@@ -86,9 +81,20 @@
         // display: flex;
         // justify-content: space-around;        
         img {
-            height: 2.5rem;
+            // [ IMPORTANT ]
+            // defalt is min-height!
+            // Change it to be responsive ===> max-height!
+            // height: 2.5rem;
+            max-height: 2.5rem;
+            // when responsive we should set up width and height together.
+            max-width: 100%;
             // [ IMPORTANT ]: Brightness Contronl only
             filter: brightness(70%);
         }
+    }
+
+    .btn--header {
+        align-self: start;
+        justify-self: start;
     }
 }

@@ -11,6 +11,12 @@
     // Hence, we should not use "flex-direction: column;" 
     display: flex;
     justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: $bp-large) {
+        grid-row: 1 / 2;
+        grid-column: full-start / -1;
+        justify-content: start;
+     }
 
     .nav-btn {
         border: none;
@@ -47,6 +53,20 @@
 // ----------- // Therefore, we need to put slightly deffernt value (not 1.5) here.            
             transform: translateY(1.3rem);
         }
+
+        @media only screen and (max-width: $bp-large) {
+            margin-top: 0;
+            margin-left: 2rem;
+
+            &::before {
+                transform: translateY(-1.2rem);
+            }
+                        
+            &::after {
+                transform: translateY(1.0rem);
+            }
+        }
+    
     }
 }
 

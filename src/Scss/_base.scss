@@ -13,3 +13,8 @@ $color-grey-dark-2: #6D5D4B;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSE BREAKPOINTS
+$bp-largest: 75em; // when 1200px (width) / 16 browser font-size (width) = 75em
+$bp-large: 62.5em; // when 1000px (width) / 16 
+$bp-large-me: 59em; // when 940px (width) / 16  

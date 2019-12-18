@@ -59,7 +59,13 @@
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 62.5em) {
+    .sidebar {
+      grid-row: 1 / 2;
+      grid-column: full-start / -1;
+      justify-content: start; } }
   .sidebar .nav-btn {
     border: none;
     border-radius: 0;
@@ -77,6 +83,14 @@
       transform: translateY(-1.5rem); }
     .sidebar .nav-btn::after {
       transform: translateY(1.3rem); }
+    @media only screen and (max-width: 62.5em) {
+      .sidebar .nav-btn {
+        margin-top: 0;
+        margin-left: 2rem; }
+        .sidebar .nav-btn::before {
+          transform: translateY(-1.2rem); }
+        .sidebar .nav-btn::after {
+          transform: translateY(1rem); } }
 
 .header {
   background-color: #54483A;
@@ -86,16 +100,13 @@
   background-position: center;
   padding: 8rem;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
-  grid-template-columns: max-content;
   justify-content: center; }
   .header__logo {
     height: 3rem;
     justify-self: center; }
-  .header .btn--header {
-    align-self: start;
-    justify-self: start; }
   .header__seenon-text {
     align-self: end;
     font-size: 1.5rem;
@@ -115,8 +126,12 @@
     grid-column-gap: 3rem;
     justify-items: center; }
     .header__seenon-logos img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%); }
+  .header .btn--header {
+    align-self: start;
+    justify-self: start; }
 
 .realtors {
   background-color: #101d2c;
@@ -134,7 +149,8 @@
     grid-row-gap: 5vh;
     align-items: center; }
     .realtors__list__img {
-      width: 7rem;
+      max-width: 7rem;
+      max-height: 7rem;
       border-radius: 50%; }
     .realtors__list__details {
       display: flex;
@@ -341,6 +357,15 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 47%; } }
+  @media only screen and (max-width: 59em) {
+    html {
+      font-size: 45%; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -350,5 +375,9 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 45vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  @media only screen and (max-width: 62.5em) {
+    .container {
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }

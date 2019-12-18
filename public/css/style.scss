@@ -2,6 +2,7 @@
 @import '../../src/Scss/base';
 @import '../../src/Scss/main';
 
+
 *,
 *::before,
 *::after {
@@ -13,6 +14,18 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px / 16px(from browser) -> 1rem = 10px;
+
+    @media only screen and (max-width: $bp-largest) {
+       font-size: 50%; // 8px
+    }
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 47%;
+    }
+
+    @media only screen and (max-width: $bp-large-me) {
+        font-size: 45%; // 8px
+     }
 }
 
 body {
@@ -39,7 +52,7 @@ body {
     // [ IMPORTANT ]
     // vh: it is only effected by browser's height.
     // vw: as width decrease, view port height decrease.
-    grid-template-rows: 45vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
     
     // [ ---------- Columns ---------- ]
     // container value: 1140 (normally)
@@ -64,4 +77,14 @@ body {
     //     padding: 40px;
     //     font-size: 50px;
     // }
+ 
+     @media only screen and (max-width: $bp-large) {
+        // just add top-side bar at the top
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: 
+            // Delete the first column
+            [full-start] minmax(6rem, 1fr) [center-start] 
+                repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) 
+            [center-end] minmax(6rem, 1fr) [full-end];
+     }
 }

@@ -1,7 +1,5 @@
 @import '../../Scss/base';
 
-
-
 .realtors {
     background-color: $color-secondary;
     // col-start : defines 7th column line as a start point
@@ -21,8 +19,8 @@
     // margin-bottom: 3rem;
 
     &__list {
+        
         // margin-top: 2rem;
-
         display: grid;
         grid-template-columns: min-content max-content;
         grid-column-gap: 2rem;
@@ -34,9 +32,14 @@
         align-items: center;
 
         &__img {
-            width: 7rem;
+            // [ IMPORTANT ]
+            // if it is not responsive, we can set either of width or height.
+            // width: 7rem;
+            // to be responsive
+            max-width: 7rem;
             // do not need to specify
             // height: 6rem;
+            max-height: 7rem;
             border-radius: 50%;
         }
 
@@ -46,15 +49,10 @@
             align-items: start;
             
             &__sold {
-
                 text-transform: uppercase;
                 color: $color-grey-light-2;
                 margin-top: -3px;
-
             }
-
         }
-
-
     }
 }
