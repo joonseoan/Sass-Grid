@@ -10,14 +10,11 @@ const Realtors = props => {
                     <h4 className="head-4 head-4--light">Erik Feiman</h4>
                     <p className="realtors__list__details__sold">245 houses sold</p>
                 </div>
-
                 <img src="img/realtor-2.jpeg" alt="Realtor 2" className="realtors__list__img" />
                 <div className="realtors__list__details">
                     <h4 className="head-4 head-4--light">Kim Brown</h4>
                     <p className="realtors__list__details__sold">212 houses sold</p>
                 </div>
-            
-            
                 <img src="img/realtor-3.jpeg" alt="Realtor 3" className="realtors__list__img" />
                 <div className="realtors__list__details">
                     <h4 className="head-4 head-4--light">Todd Ramsey</h4>

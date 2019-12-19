@@ -1,6 +1,7 @@
 @import '../../Scss/base';
 
 .stories {
+
     &__pictures {
         grid-column: full-start / col-end 4;
 
@@ -20,6 +21,15 @@
                 rgba($color-primary, .5)),
                 // in bottom layer
                 url("/img/back.jpg");
+        
+        background-size: cover;
+        // background-position: center;
+        
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 6 / 7;
+            grid-column: full-start / -1;
+            padding: 6rem;
+        }
 
         &__img--1 {
 
@@ -36,11 +46,18 @@
             grid-row: 2 / 6;
             grid-column: 2 / 6;
             box-shadow: 0 2rem 5rem rgba(#000000, .1);
+
+            @media only screen and (max-width: $bp-medium) {
+                // We do not need to specify image width or height oveer here
+                grid-row: 1 / -1;
+                grid-column: 1 / 5;
+            }    
         }
 
         &__img--2 {
 
             // to cover outside of boundary of this image
+            // size control: it can extend to outside of grid.
             width: 115%;
             box-shadow: 0 2rem 5rem rgba(#000000, .1);
 
@@ -51,8 +68,13 @@
              // align-self: start; // center;// stretch; // center, start, end
              // horizontal
              // justify-self: start; // stretch // center, start, end
-            align-self: start;
+            // align-self: start;
             z-index: 10;
+
+            @media only screen and (max-width: $bp-medium) {
+                width: 100%;
+                grid-row: 1 / -1;
+            }
         }
     }
 
@@ -92,6 +114,11 @@
         // // In this case when we use column, it controls the horizontal position 
         // // of contents, starts, end inside of each item
         // align-items: start;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 5 / 6;
+            grid-column: full-start / -1;            
+        }
 
         &__text {
             font-style: italic;
