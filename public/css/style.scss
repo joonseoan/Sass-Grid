@@ -89,8 +89,9 @@ body {
     }
 
     @media only screen and (max-width: $bp-medium) {
-        // min-content: add for realtor 
-        // [ IMPORTANT ]!!!!! "calc" for making 100 vh with sidebar and header
-        grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content);
+        
+        // delete 40vh and use implicit grids to resolve the outbound issues
+        // also, we can use min-conent ==> repeat(6, min-content) instead.
+        grid-template-rows: 6rem calc(100vh - 6rem);
     }
 }

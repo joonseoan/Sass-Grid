@@ -23,6 +23,8 @@
         // grid-row-gap: 0;
     }
 
+
+
     &__list {
         
         // margin-top: 2rem;
@@ -44,6 +46,11 @@
             
             // Joon
             // grid-template-columns: min-content max-content min-content max-content min-content max-content;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            // grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+            grid-template-columns: min-content max-content   
         }
 
         &__img {

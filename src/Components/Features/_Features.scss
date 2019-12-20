@@ -5,48 +5,58 @@
     
     margin: 15rem 0;
     
-    display: grid;
+    @supports(display: grid) {
+        display: grid;
     
-    // [ IMPORTANT ]
-    // responsive ui
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)) ;
-    
-    // We do not need to specify rows in this case.
-    // 140px ==> 33rem   
-    // grid-template-columns: repeat(3, minmax(140px, 1fr));
+        // [ IMPORTANT ]
+        // responsive ui
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)) ;
+        
+        // We do not need to specify rows in this case.
+        // 140px ==> 33rem   
+        // grid-template-columns: repeat(3, minmax(140px, 1fr));
 
-    grid-gap: 6rem;
+        grid-gap: 6rem;
 
-    // controls items inside of item
-    align-items: start;
+        // controls items inside of item
+        align-items: start;
+    }
 
     // This featue class will be used in another component
     .feature {
 
-        display: grid;
+        // To prevent cross-browser issue,
+        // we can use float:
+        float: left;
+        width: 33.3333%;
+        margin-bottom: 6rem; 
 
-        // [ IMPORTANT ]
-        // Without the grid-template-row: we must use span 
-        //  for one row to expand to the end!!!!!!!!!!! 
-        // grid-template-rows: repeat(2, min-content);
+        @supports(display: grid) {
+            display: grid;
 
-        // [IMPORTANT]
-        // It is for columns but we need to use min-content
-        //  because we should not put a space beteen icon and title
-        //  and because we icon size is fixed.
-        grid-template-columns: min-content 1fr;
+            // [ IMPORTANT ]
+            // Without the grid-template-row: we must use span 
+            //  for one row to expand to the end!!!!!!!!!!! 
+            // grid-template-rows: repeat(2, min-content);
 
-        // Use separate gap for row and column 
-        grid-row-gap: 1.5rem;
-        grid-column-gap: 2.5rem;
+            // [IMPORTANT]
+            // It is for columns but we need to use min-content
+            //  because we should not put a space beteen icon and title
+            //  and because we icon size is fixed.
+            grid-template-columns: min-content 1fr;
 
-        // [Control grid]
-        // align-content: top;
-        // justify-content: center;
-        
-        // [Control contents inside of grid]
-        //justify-items: center;
-        // align-items: start;
+            // Use separate gap for row and column 
+            grid-row-gap: 1.5rem;
+            grid-column-gap: 2.5rem;
+
+            // [Control grid]
+            // align-content: top;
+            // justify-content: center;
+            
+            // [Control contents inside of grid]
+            //justify-items: center;
+            // align-items: start;
+        }
         
         &__icon {
             // Remember! To change svg icon, we must use "fill"
