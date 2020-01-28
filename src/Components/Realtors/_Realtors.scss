@@ -23,8 +23,6 @@
         // grid-row-gap: 0;
     }
 
-
-
     &__list {
         
         // margin-top: 2rem;
@@ -40,7 +38,7 @@
 
         
         @media only screen and (max-width: $bp-medium) {
-            
+            // [ IMPORTANT ]
             // we can use 2 colums and more than a single colum in repeat function
             grid-template-columns: repeat(3, min-content max-content);
             

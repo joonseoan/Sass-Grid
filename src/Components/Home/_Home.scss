@@ -26,16 +26,17 @@
             grid-row: 1 / 2;
             grid-column: 1 / -1;
             z-index: 1;
-
         }
 
         &__like {
             
             // [ IMPORTANT!!!!!!!! ]
+            // 
             // To be overlayed inside of same grid,
             //   we need to specify the same position together
 // ---------//   as shown
             grid-row: 1 / 2;
+            //Please, grid-template-columns: repeat(2, 1fr);
             grid-column: 2 / 3;
             justify-self: end;
 
@@ -74,7 +75,7 @@
 
         &__location,
         &__rooms,
-        &__area ,
+        &__area,
         &__price {
 
             font-size: 1.5rem;

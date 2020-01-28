@@ -27,9 +27,9 @@
 
         // To prevent cross-browser issue,
         // we can use float:
-        float: left;
-        width: 33.3333%;
-        margin-bottom: 6rem; 
+        // float: left;
+        // width: 33.3333%;
+        // margin-bottom: 6rem; 
 
         @supports(display: grid) {
             display: grid;
