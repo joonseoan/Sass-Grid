@@ -1,7 +1,8 @@
 @import "base";
 @import "typography";
 
-@import '../Components/App.scss';
+// [ Original Project ]
+// @import '../Components/App.scss';
 
 // @import "sidebar";
 // @import "header";
@@ -11,3 +12,5 @@
 // @import "homes";
 // @import "gallery";
 // @import "footer";
+
+@import '../Grid_PlayGround/PersonalPractice';

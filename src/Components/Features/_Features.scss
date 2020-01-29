@@ -10,7 +10,7 @@
     
         // [ IMPORTANT ]
         // responsive ui
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)) ;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         
         // We do not need to specify rows in this case.
         // 140px ==> 33rem   

@@ -7,5 +7,10 @@ import Challenge from './Grid_PlayGround/Challenge';
 import ImplicitExplicitGrid from './Grid_PlayGround/ImplicitExplicitGrid';
 import MinMax from './Grid_PlayGround/MinMax';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// [ Practice ]
+import PersonalPractice from '../src/Grid_PlayGround/PersonalPractice';
 
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+// [ Practice ]
+ReactDOM.render(<PersonalPractice />, document.getElementById('root'));
