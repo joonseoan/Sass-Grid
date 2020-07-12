@@ -1,234 +1,234 @@
-*,
-*::before,
-*::after {
-    // margin: 20px;
-    padding: 40px;
-    box-sizing: inherit;
-}
+// *,
+// *::before,
+// *::after {
+//     // margin: 20px;
+//     padding: 40px;
+//     box-sizing: inherit;
+// }
 
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-}
+// html {
+//     box-sizing: border-box;
+//     font-size: 62.5%;
+// }
 
-body {
-    // background-color: orangered; 
-    color: black;
-    font-weight: 300;
-    line-height: 1.6;
-    // border-color: black;
-    // border: solid 10px black;
-}
+// body {
+//     // background-color: orangered; 
+//     color: black;
+//     font-weight: 300;
+//     line-height: 1.6;
+//     // border-color: black;
+//     // border: solid 10px black;
+// }
 
-.container {
-    background-color: #eeeeee;
-    // width: 1000px;
-    width: 100vw;
-    height: 100vh;
-    // height: 1000px;
-    margin: 30px auto;
+// .container {
+//     background-color: #eeeeee;
+//     // width: 1000px;
+//     width: 100vw;
+//     height: 100vh;
+//     // height: 1000px;
+//     margin: 30px auto;
 
-    // define "display: grid" in parent class
-    display: grid;
-    
-    // [Row]
-    // 3)
-    // we can't define row heght here.
-    // Instead we need to define height above.
-    // grid-template-rows: repeat(2, 1fr);
+//     // define "display: grid" in parent class
+//     display: grid;
 
-    // 2)
-    // 2. 150px: first and second rows with height 150px
-    // when we need to define height in a row (cell) base
-    grid-template-rows: repeat(2, 150px);
+//     // [Row]
+//     // 3)
+//     // we can't define row heght here.
+//     // Instead we need to define height above.
+//     // grid-template-rows: repeat(2, 1fr);
 
-    
-    // 1)
-    // it defines row height
-    // first 150px : first row height which is Orange
-    // second 150px: the second row height which is Green
-    // the third 150px: the third row height which is Vilote
-    // grid-template-rows: 150px 150px 150px ........;
-    
-    // here we defines two rows only
-    // grid-template-rows: 150px 150px;
-
-    // [Column]
-
-    // 3)
-
-    // When we want to have diffetn widths but fill out the row
-    // FYI, it is also similar to "flex: 1, flex: 2 ..."
-    // grid-template-columns: 1fr 2fr 1fr;
-    // grid-template-columns: 1fr 3fr 1fr;
-    
-    // Even working with percentage!!!!!!!!!!!!
-    // grid-template-columns: 50% 2fr 1fr;
-
-    // When we want to have same widths and fill out the row.
-    // grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-
-    // When we would like to the last column occupies all the rest of the space.
-    // 1fr: it is similar to "flex: 1"
-    // grid-template-columns: 300px 150px 1fr;
-
-    // it is called "Track"??
-    // when we wnat to change the width only in the first column
-    // grid-template-columns: 300px repeat(2, 150px);
-
-    // when we wnat to change the width only in the third column
-    // grid-template-columns: repeat(2, 150px) 300px;
-
-    // 2)
-    // 3. 150px: first, second and third columns with width 150px 
-    // grid-template-columns: repeat(3, 150px);
-
-    // 1)
-    // it defines column width
-    // first 150px : first column width
-    // second 150px: the second column width
-    // the third 150px: the third column width 
-    // grid-template-columns: 150px 150px 150px ........;
-
-    // grid-template-columns: 150px 150px 150px;
-
-    /* 
-        1. Orange      2. Green     3. Violet
+//     // 2)
+//     // 2. 150px: first and second rows with height 150px
+//     // when we need to define height in a row (cell) base
+//     grid-template-rows: repeat(2, 150px);
 
 
+//     // 1)
+//     // it defines row height
+//     // first 150px : first row height which is Orange
+//     // second 150px: the second row height which is Green
+//     // the third 150px: the third row height which is Vilote
+//     // grid-template-rows: 150px 150px 150px ........;
 
-        -----------------------------------------------
-            Gutter
-        ------------------------------------------------
+//     // here we defines two rows only
+//     // grid-template-rows: 150px 150px;
 
-        4. Pink        5. Blue      6.Brown
-    
+//     // [Column]
 
-    
-    */
+//     // 3)
 
-    // [Gutter]
-    // grid-row-gap: 30px;
-    // grid-column-gap: 50px;
+//     // When we want to have diffetn widths but fill out the row
+//     // FYI, it is also similar to "flex: 1, flex: 2 ..."
+//     // grid-template-columns: 1fr 2fr 1fr;
+//     // grid-template-columns: 1fr 3fr 1fr;
 
-    // it is for both row and column.
-    grid-gap: 30px;
+//     // Even working with percentage!!!!!!!!!!!!
+//     // grid-template-columns: 50% 2fr 1fr;
 
-}
+//     // When we want to have same widths and fill out the row.
+//     // grid-template-columns: repeat(3, 1fr);
+//     grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
 
-.item {
-    padding: 20px;
-    font-size: 30px;
-    font-family: sans-serif;
-    color: white;
+//     // When we would like to the last column occupies all the rest of the space.
+//     // 1fr: it is similar to "flex: 1"
+//     // grid-template-columns: 300px 150px 1fr;
 
-    &--1 {
-        background-color: orangered;
+//     // it is called "Track"??
+//     // when we wnat to change the width only in the first column
+//     // grid-template-columns: 300px repeat(2, 150px);
 
-        // [ IMPORTANT ]
-        // Switching position
+//     // when we wnat to change the width only in the third column
+//     // grid-template-columns: repeat(2, 150px) 300px;
 
-        // different row length
-        // grid-row: 2 / 3; 
-        // grid-column: 2 / 4;
-        
-        // different colurmn length
-        // grid-row: 2 / 3;
-        // grid-column: 2 / 4;
+//     // 2)
+//     // 3. 150px: first, second and third columns with width 150px 
+//     // grid-template-columns: repeat(3, 150px);
 
-        // 2) Easier way 2 (start) / 3 (end)
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        
-        // 1)
-        // 2 : grid row number 2 in the index of fireFox!!!
-        // 3 : grid row number 3 in the index of firefox!
-        // grid-row-start: 2;
-        // grid-row-end: 3;
-        // grid-column-start: 2;
-        // grid-column-end: 3;
+//     // 1)
+//     // it defines column width
+//     // first 150px : first column width
+//     // second 150px: the second column width
+//     // the third 150px: the third column width 
+//     // grid-template-columns: 150px 150px 150px ........;
 
-        
-        // [Important]
-        // if we want to place &__1 on top of the current &--3,
-        // we can use z-index
-        // In other word, layer's priroty can be managed with z-index.
-        z-index: 10;
-    }
+//     // grid-template-columns: 150px 150px 150px;
 
-    &--2 {
-        background-color: yellowgreen; 
-
-        
-        // span means a number of spin (cells)
-        // grid-column: 1 / span 3; // === // grid-column: 1 / 4; (4 is line number)
-        // starts from 2 and takes 2 column cells 
-        // grid-column: 2 / span 2;
-
-        // it is working as well even though it is not defined
-        // takes 4th column
-        grid-column: 2 / span 3;
-
-        // in order to prevent this,
-        // -1 : all the way to the end column defined
-        grid-column: 2 / -1;
+//     /* 
+//         1. Orange      2. Green     3. Violet
 
 
-        // only with grid-column, it is not still clear
-        // hence, it is placed in the next line.
-        // grid-column: 1 / 4;
-        
-    }
 
-    &--3 {
-        // only when we specify grid-column position
-        //  that is conflicted with the position arleady defined
-        //      with grid-row or grid-column
-        // this position's priorty is lower than the existing one.
-        //  Therefore, it is displayed in the next line.
-        grid-column: 1 / 3;
-        
-        // when we specify both grid-column and grid-row postion 
-        //  that are conflicted with the postion already defined 
-        //      with grid-row and grid-column
-        // this.position's priority is higher than the existing position
-        //  Then, is covers the %__1 at the top layer.
-        grid-row: 2 / 3;
+//         -----------------------------------------------
+//             Gutter
+//         ------------------------------------------------
 
-        // [Important]
-        // if we want to place &__1 on top of the current &--3,
-        // we can use z-index
+//         4. Pink        5. Blue      6.Brown
 
-        background-color: blueviolet;
-    }
 
-    &--4 {
-        background-color: palevioletred;
-    }
 
-    &--5 {
+//     */
 
-        // Shortest way to switch the position
-        // 1 (row start) / 3 (colurmn start) / 2 (row end) / 4 (column end)
-        // grid-area: 1 / 3 / 2 / 4;
+//     // [Gutter]
+//     // grid-row-gap: 30px;
+//     // grid-column-gap: 50px;
 
-        // it defined.
-        // It makes $--4 has it placed in the next  line.
-        //  because &--4's grid poistion is not defined(default)
-        grid-area: 1 / 3 / 3 / 4;
-        // Switching position
-        // grid-row: 1 / 2;
-        // grid-column: 3 / 4;
-        
-        background-color: royalblue;
-    }
+//     // it is for both row and column.
+//     grid-gap: 30px;
 
-    &--6 {
+// }
 
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        background-color: goldenrod;
+// .item {
+//     padding: 20px;
+//     font-size: 30px;
+//     font-family: sans-serif;
+//     color: white;
 
-    }
-}
+//     &--1 {
+//         background-color: orangered;
+
+//         // [ IMPORTANT ]
+//         // Switching position
+
+//         // different row length
+//         // grid-row: 2 / 3; 
+//         // grid-column: 2 / 4;
+
+//         // different colurmn length
+//         // grid-row: 2 / 3;
+//         // grid-column: 2 / 4;
+
+//         // 2) Easier way 2 (start) / 3 (end)
+//         grid-row: 2 / 3;
+//         grid-column: 2 / 3;
+
+//         // 1)
+//         // 2 : grid row number 2 in the index of fireFox!!!
+//         // 3 : grid row number 3 in the index of firefox!
+//         // grid-row-start: 2;
+//         // grid-row-end: 3;
+//         // grid-column-start: 2;
+//         // grid-column-end: 3;
+
+
+//         // [Important]
+//         // if we want to place &__1 on top of the current &--3,
+//         // we can use z-index
+//         // In other word, layer's priroty can be managed with z-index.
+//         z-index: 10;
+//     }
+
+//     &--2 {
+//         background-color: yellowgreen; 
+
+
+//         // span means a number of spin (cells)
+//         // grid-column: 1 / span 3; // === // grid-column: 1 / 4; (4 is line number)
+//         // starts from 2 and takes 2 column cells 
+//         // grid-column: 2 / span 2;
+
+//         // it is working as well even though it is not defined
+//         // takes 4th column
+//         grid-column: 2 / span 3;
+
+//         // in order to prevent this,
+//         // -1 : all the way to the end column defined
+//         grid-column: 2 / -1;
+
+
+//         // only with grid-column, it is not still clear
+//         // hence, it is placed in the next line.
+//         // grid-column: 1 / 4;
+
+//     }
+
+//     &--3 {
+//         // only when we specify grid-column position
+//         //  that is conflicted with the position arleady defined
+//         //      with grid-row or grid-column
+//         // this position's priorty is lower than the existing one.
+//         //  Therefore, it is displayed in the next line.
+//         grid-column: 1 / 3;
+
+//         // when we specify both grid-column and grid-row postion 
+//         //  that are conflicted with the postion already defined 
+//         //      with grid-row and grid-column
+//         // this.position's priority is higher than the existing position
+//         //  Then, is covers the %__1 at the top layer.
+//         grid-row: 2 / 3;
+
+//         // [Important]
+//         // if we want to place &__1 on top of the current &--3,
+//         // we can use z-index
+
+//         background-color: blueviolet;
+//     }
+
+//     &--4 {
+//         background-color: palevioletred;
+//     }
+
+//     &--5 {
+
+//         // Shortest way to switch the position
+//         // 1 (row start) / 3 (colurmn start) / 2 (row end) / 4 (column end)
+//         // grid-area: 1 / 3 / 2 / 4;
+
+//         // it defined.
+//         // It makes $--4 has it placed in the next  line.
+//         //  because &--4's grid poistion is not defined(default)
+//         grid-area: 1 / 3 / 3 / 4;
+//         // Switching position
+//         // grid-row: 1 / 2;
+//         // grid-column: 3 / 4;
+
+//         background-color: royalblue;
+//     }
+
+//     &--6 {
+
+//         grid-row: 1 / 2;
+//         grid-column: 2 / 3;
+//         background-color: goldenrod;
+
+//     }
+// }

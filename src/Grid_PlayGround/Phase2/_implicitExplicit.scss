@@ -1,0 +1,19 @@
+.ph2_container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #dddddd;
+
+  display: grid;
+  grid-template-rows: repeat(2, [row-start] 150px [row-end]);
+  grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+
+  grid-gap: 30px;
+
+  .ph2_item {
+    padding: 20px;
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: orangered;
+  }
+}

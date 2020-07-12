@@ -1,0 +1,209 @@
+// Method 3
+// Method 3 with grid area // it is only for small layout!!!
+
+.outerview {
+  background-color: whitesmoke;
+  width: 1200px;
+  height: 800px;
+  margin: 20px auto;
+
+  display: grid;
+
+  grid-template-rows: 100px 200px 400px 100px;
+  grid-template-columns: repeat(3, 1fr) 15%;
+
+  grid-gap: 20px;
+
+  grid-template-areas:
+    "header header header header"
+    "box box box side"
+    "main main main side"
+    "foot foot foot foot"
+  ;
+}
+
+.innerview {
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 20px;
+
+  &--1 {
+    background-color: royalblue;
+    // 2)
+    grid-area: header;
+    // grid-area: 1 / 1 / 2 / -1;
+  }
+
+  &--2 {
+    background-color: violet;
+  }
+
+  &--3 {
+    background-color: greenyellow;
+
+  }
+
+  &--4 {
+    background-color: gold;
+
+  }
+
+  &--5 {
+    background-color: brown;
+    // 2) 
+    grid-area: side;
+
+    // 1)
+    // grid-area: 2 / 4 / span 2 / 5;
+  }
+
+  &--6 {
+    background-color: blanchedalmond;
+    grid-area: main;
+    // 1)
+    // grid-column: 1 / span 3;
+
+  }
+
+  &--7 {
+    background-color: aqua;
+    grid-area: foot;
+    // grid-column: 1 / -1;
+  }
+}
+
+
+// // 2)
+// // Method 2 with name
+
+// .outerview {
+//   background-color: whitesmoke;
+//   width: 1200px;
+//   height: 800px;
+//   margin: 20px auto;
+
+//   display: grid;
+
+//   grid-template-rows:
+//     [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [ main-end footer-start] 100px [footer-end];
+
+//   // when we use repeat
+//   grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 15% [sidebar-end];
+
+//   grid-gap: 20px;
+// }
+
+// .innerview {
+//   font-size: 20px;
+//   font-family: sans-serif;
+//   padding: 20px;
+
+//   &--1 {
+//     background-color: royalblue;
+//     // 2) with Name
+//     // col-start 1 ---> col-end 1; col-start 2 --> col-start 2 ===> automatically nameed by repeat
+//     grid-area: header-start / col-start 1 / header-end / sidebar-end;
+
+//     // 1)
+//     // grid-area: 1 / 1 / 2 / -1;
+//   }
+
+//   &--2 {
+//     background-color: violet;
+//   }
+
+//   &--3 {
+//     background-color: greenyellow;
+
+//   }
+
+//   &--4 {
+//     background-color: gold;
+
+//   }
+
+//   &--5 {
+//     background-color: brown;
+//     // 2) Professional way
+//     // By repeat, col-end can be used!!! [ IMPORTANT ]
+//     grid-area: box-start / col-end 3 / main-end / sidebar-end;
+
+//     // 1)
+//     // grid-area: 2 / 4 / span 2 / 5;
+//   }
+
+//   &--6 {
+//     background-color: blanchedalmond;
+
+//     // 2)
+//     grid-column: col-start 1 / col-end 3;
+
+//     // 1)
+//     // grid-column: 1 / span 3;
+
+//   }
+
+//   &--7 {
+//     background-color: aqua;
+//     grid-column: col-start 1 / sidebar-end;
+//     // grid-column: 1 / -1;
+//   }
+// }
+
+
+// Mehtod 1 with line number
+// .outerview {
+//   background-color: whitesmoke;
+//   width: 1200px;
+//   height: 800px;
+//   margin: 20px auto;
+
+//   display: grid;
+
+//   grid-template-rows: 15% repeat(3, 1fr) 15%;
+//   grid-template-columns: repeat(3, 1fr) 15%;
+
+//   grid-gap: 20px;
+// }
+
+// .innerview {
+//   font-size: 20px;
+//   font-family: sans-serif;
+//   padding: 20px;
+
+//   &--1 {
+//     background-color: royalblue;
+//     grid-area: 1 / 1 / 2 / -1;
+//   }
+
+//   &--2 {
+//     background-color: violet;
+//   }
+
+//   &--3 {
+//     background-color: greenyellow;
+
+//   }
+
+//   &--4 {
+//     background-color: gold;
+
+//   }
+
+//   &--5 {
+//     background-color: brown;
+//     grid-area: 2 / 4 / span 3 / 5;
+//   }
+
+//   &--6 {
+//     background-color: blanchedalmond;
+//     grid-area: 3 / 1 / 5 / 4;
+
+//   }
+
+//   &--7 {
+//     background-color: aqua;
+//     grid-column: 1 / -1;
+
+//   }
+// }
