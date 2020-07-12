@@ -9,6 +9,32 @@
 
   grid-gap: 30px;
 
+  // Implicit grid two types
+  /*
+    1. When the grid tracks are not defined in template columns and rows 
+    it is implicit grid.
+
+    2. when both grid-row and grid-column are not defined,
+      it is still lower priority than the grid that has grid-row and grid-column.
+
+    FYI, when it is implicit grid, it does not have solid outline in fire fox grid
+  */
+
+  // The way of implicit grids to be explicit grid (row)
+  grid-auto-rows: 80px;
+
+  // make it order in the way of columns first
+  // In other words, make it column first and then row
+  // By default, it is : grid-auto-flow: row.
+  // Normally the row start is first
+  grid-auto-flow: column;
+
+  // The way of implicit grids to be explicit grid (column)
+  // In this case, the existing column size is 1fr as shown above
+  // [IMPORTANT]
+  // This grid auto column is working only when grid-auto-flow id defined.!!!
+  grid-auto-columns: 0.5fr;
+
   .ph2_item {
     padding: 20px;
     color: wheat;

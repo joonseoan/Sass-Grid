@@ -1,0 +1,54 @@
+.ph2t_container {
+  width: 1000px;
+  height: 1000px;
+  margin: 20px auto;
+  background-color: #dddddd;
+
+  display: grid;
+  // grid-template-rows: repeat(2, [row-start] 150px [row-end]);
+  // grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+
+
+  // grid-auto-flow: row;
+  // grid-auto-columns: .5fr;
+
+  // Aligning Grid Items to grid Areas
+  // It is for the internal grid cell....!! not inside of div
+  // align-items: center; // start, end, default --> stretch (fulfill the cell)
+  // justify-items: center; // start, end, default ---> stretch
+
+  // Aligning Grid Track to Grid Container
+  grid-template-rows: repeat(2, [row-start] 100px [row-end]);
+  grid-template-columns: repeat(2, [col-start] 200px [col-end]);
+
+  grid-auto-rows: 80px;
+  // [ Important ]
+  // dense is fulfill the empty grid cell!
+  grid-auto-flow: row dense;
+  grid-gap: 30px;
+
+  align-content: center; // start, end, space-between, space-around
+  justify-content: center; // start, end, space-between, space-around, space-evenly;
+
+  .ph2t_item {
+    padding: 10px;
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: orangered;
+
+    &--4 {
+      background-color: yellow;
+      grid-row: 2 / span 3;
+
+      // Overriding Grid Items
+      // align-self: start;
+      // justify-self: start;
+    }
+
+    &--7 {
+      background-color: pink;
+      grid-column: 1 / -1;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.ph2m_container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #dddddd;
+
+  display: grid;
+
+  // Basic by using min-content and max-content
+  // grid-template-rows: repeat(2, 150px);
+  grid-template-columns: max-content 1fr 1fr min-content;
+
+  // it fully depend on the content size even thought it is set by min-content
+  grid-template-rows: (2, min-content);
+
+  // Basic by using minmax
+  // minmax : minmax(150px, min-content)
+  // at least 150px, and when the content is over 150px, the cell height or width shoul be wider
+  // When the values are absolute value 300px is the default value.
+  // However, when min-content or max-content is less than the absolute value,
+  //  the absolute value is the default value
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+
+  // [ Responsive Test ]
+  width: 90%; // for responsive
+
+  // the values are absolute values, the largr value is the default value
+  // responsive : 300 px is maintained until other grids is minimized.
+
+  grid-template-columns: minmax(200px, 300px) repeat(3, 1fr);
+
+  // default is 50%
+  // It maintains 50% of the entire container until other grids are minimized.
+  // Then it can't be less than 200px
+  grid-template-columns: minmax(200px, 50%) repeat(3, 1fr);
+
+  // default is 1fr
+  // It maintains 1fr until other grids are minimized
+  // It can't be less than 200px
+  grid-template-columns: minmax(200px, 1fr) repeat(3, 1fr);
+
+  .ph2m_item {
+    padding: 10px;
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: orangered;
+
+    &--1 {
+      background-color: orange;
+    }
+
+    &--1 {
+      background-color: yellowgreen;
+    }
+
+    &--2 {
+      background-color: violet;
+    }
+
+    &--3 {
+      background-color: brown;
+    }
+
+    &--4 {
+      background-color: skyblue;
+    }
+
+    &--5 {
+      background-color: azure;
+    }
+
+    &--6 {
+      background-color: palevioletred;
+    }
+
+    &--7 {
+      background-color: rebeccapurple;
+    }
+
+    &--8 {
+      background-color: green;
+    }
+  }
+}

@@ -1,121 +1,93 @@
 @import '../../src/Scss/main';
 
 // [ Original Project ]
-// // @import '../../src/Grid_PlayGround/PlayGround';
-// @import '../../src/Scss/base';
-// @import '../../src/Scss/main';
+@import '../../src/Scss/base';
 
 
-// *,
-// *::before,
-// *::after {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: inherit;
-// }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-// html {
-//   box-sizing: border-box;
-//   font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px / 16px(from browser) -> 1rem = 10px;
 
-//   @media only screen and (max-width: $bp-largest) {
-//     font-size: 50%;
-//   }
-// }
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%; // 8px
+  }
 
-// html {
-//   box-sizing: border-box;
-//   font-size: 62.5%; // 10px / 16px(from browser) -> 1rem = 10px;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 47%;
+  }
 
-//   @media only screen and (max-width: $bp-largest) {
-//     font-size: 50%; // 8px
-//   }
+  @media only screen and (max-width: $bp-large-me) {
+    font-size: 45%; // 8px
+  }
+}
 
-//   @media only screen and (max-width: $bp-large) {
-//     font-size: 47%;
-//   }
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
 
-//   @media only screen and (max-width: $bp-large-me) {
-//     font-size: 45%; // 8px
-//   }
-// }
+.container {
+  display: grid;
 
-// body {
-//   font-family: $font-primary;
-//   color: $color-grey-dark-2;
-//   font-weight: 300;
-//   line-height: 1.6;
-// }
+  // [ ---------- Rows ---------- ]
+  // We can put view port over here instead of fr, %, and px
+  // BTW, 80vh is relative value.
+  // min-content: the size to fit into the smaller
 
+  // [ IMPORTANT ]
+  // auto: It is a default value
+  //  to fit into the contents automatically. 
+  //  in this case, auto can be alternatively replaced with "min-content"
+  // grid-template-rows: 80vh auto 40vw repeat(3, min-content);
 
-// .container {
-//   display: grid;
-//   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-//   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  // [ IMPORTANT ]
+  // vh: it is only effected by browser's height.
+  // vw: as width decrease, view port height decrease.
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
-//   @media only screen and (max-width: $bp-large) {
-//     grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-//     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-//   }
+  // [ ---------- Columns ---------- ]
+  // container value: 1140 (normally)
+  // 1140 / 8 = 142.5px ==> 14rem
 
-//   @media only screen and (max-width: $bp-medium) {
-//     grid-template-rows: 6rem calc(100vh - 6rem);
-//   }
-// }
+  //     // [ IMPORTANT ]
+  //     // minmax: minimum => min-content, maximum: 14rem
+  //     // min-content: never smaller than the contents inside.
 
+  //     // 8rem: fixed width for sidebar
 
-// .container {
-//   display: grid;
+  //     // 1fr (second) and 1fr (lastone): for empty sapce to
+  //     //  to make the 8 colums to be placed at the center.
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] // minmax (6rem, 1fr): even though it does not have enough space
+    minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
-//   // [ ---------- Rows ---------- ]
-//   // We can put view port over here instead of fr, %, and px
-//   // BTW, 80vh is relative value.
-//   // min-content: the size to fit into the smaller
+  // & > * {
+  //     padding: 40px;
+  //     font-size: 50px;
+  // }
 
-//   // [ IMPORTANT ]
-//   // auto: It is a default value
-//   //  to fit into the contents automatically. 
-//   //  in this case, auto can be alternatively replaced with "min-content"
-//   // grid-template-rows: 80vh auto 40vw repeat(3, min-content);
+  @media only screen and (max-width: $bp-large) {
+    // just add top-side bar at the top
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      // Delete the first column
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
 
-//   // [ IMPORTANT ]
-//   // vh: it is only effected by browser's height.
-//   // vw: as width decrease, view port height decrease.
-//   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  @media only screen and (max-width: $bp-medium) {
 
-//   // [ ---------- Columns ---------- ]
-//   // container value: 1140 (normally)
-//   // 1140 / 8 = 142.5px ==> 14rem
-
-//   //     // [ IMPORTANT ]
-//   //     // minmax: minimum => min-content, maximum: 14rem
-//   //     // min-content: never smaller than the contents inside.
-
-//   //     // 8rem: fixed width for sidebar
-
-//   //     // 1fr (second) and 1fr (lastone): for empty sapce to
-//   //     //  to make the 8 colums to be placed at the center.
-//   grid-template-columns:
-//     [sidebar-start] 8rem [sidebar-end full-start] // minmax (6rem, 1fr): even though it does not have enough space
-//     minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
-//   // & > * {
-//   //     padding: 40px;
-//   //     font-size: 50px;
-//   // }
-
-//   @media only screen and (max-width: $bp-large) {
-//     // just add top-side bar at the top
-//     grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-//     grid-template-columns:
-//       // Delete the first column
-//       [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-//   }
-
-//   @media only screen and (max-width: $bp-medium) {
-
-//     // delete 40vh and use implicit grids to resolve the outbound issues
-//     // also, we can use min-conent ==> repeat(6, min-content) instead.
-//     grid-template-rows: 6rem calc(100vh - 6rem);
-//   }
-// }
+    // delete 40vh and use implicit grids to resolve the outbound issues
+    // also, we can use min-conent ==> repeat(6, min-content) instead.
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+}

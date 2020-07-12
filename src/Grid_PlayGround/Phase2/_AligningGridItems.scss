@@ -1,0 +1,47 @@
+.ph2a_container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #dddddd;
+
+  display: grid;
+  grid-template-rows: repeat(2, [row-start] 150px [row-end]);
+  grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+
+  grid-gap: 30px;
+  grid-auto-rows: 80px;
+
+  grid-auto-flow: row;
+
+  // not make it effect when grid-auto-flos is "row"
+  // grid-auto-columns: 0.5fr;
+
+  align-items: center; // start, end, default --> stretch (fulfill the cell)
+
+  // only with padding size down below, it aligning the direct child
+  // content is center!
+  justify-items: center; // start, end, default ---> stretch
+
+  .ph2a_item {
+    padding: 10px;
+    // box-sizing: border-box;
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: orangered;
+
+
+    &--4 {
+      background-color: yellow;
+      grid-row: 2 / span 3;
+
+      // Overriding
+      align-self: start;
+      justify-self: start;
+    }
+
+    &--7 {
+      background-color: pink;
+      grid-column: 1 / -1;
+    }
+  }
+}

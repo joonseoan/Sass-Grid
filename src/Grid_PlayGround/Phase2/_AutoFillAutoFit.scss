@@ -1,0 +1,95 @@
+.ph2au_container {
+  width: 1000px;
+  margin: 20px auto;
+  background-color: #dddddd;
+
+  display: grid;
+
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+
+  grid-template-columns: repeat((4, 1fr));
+
+  // [ IMPORTANT ]
+  // auto-fill and auto-fit creates row and colums on the basis of the entire width or height above
+  //    and grid's width and height
+
+
+  // only it works with % and absoute value
+  // Creates 10 colums because width is 1000px!!
+  grid-template-columns: repeat(auto-fill, 100px);
+
+  // [IMPORTANT]
+  // not working with auto-fill
+  // justify-content: center;
+
+  // It creates 10 colums, but hides the rest 2 colums
+  grid-template-columns: repeat(auto-fit, 100px);
+
+  // [IMPORTANT]
+  // working with auth fit.
+  justify-content: center;
+
+  // [ Responsive Test ]
+  width: 90%;
+  // when the entire size is less than 100px
+  // It automatically do wrap function
+
+  // without minmax, it always maintains 100px. 
+  // When the width is bout to be less than 100px, it is wrapping
+  grid-template-columns: repeat(auto-fit, 200px);
+
+  // with minmax
+  // Before the width is about to less then 200px from 1fr, it is wrapping
+  // Therefore grid size is normally bigger than 200px
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  // [ Important ]
+  // From the third row, the templates does not defines the row size.
+  // It can be implicit row from there.
+  // Therefore, we should difine the row size
+  grid-auto-rows: 150px;
+
+  .ph2au_item {
+    padding: 10px;
+    color: wheat;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: orangered;
+
+    &--1 {
+      background-color: orange;
+    }
+
+    &--1 {
+      background-color: yellowgreen;
+    }
+
+    &--2 {
+      background-color: violet;
+    }
+
+    &--3 {
+      background-color: brown;
+    }
+
+    &--4 {
+      background-color: skyblue;
+    }
+
+    &--5 {
+      background-color: azure;
+    }
+
+    &--6 {
+      background-color: palevioletred;
+    }
+
+    &--7 {
+      background-color: rebeccapurple;
+    }
+
+    &--8 {
+      background-color: green;
+    }
+  }
+}

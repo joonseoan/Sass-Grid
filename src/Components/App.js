@@ -1,5 +1,13 @@
 import React, { Fragment } from 'react';
 
+// [ Playground ]
+// import PlayGround from '../Grid_PlayGround/Phase2/';
+
+// const App = () => {
+//     return <PlayGround />
+// }
+
+// [ Project ]
 import Sidebar from './Sidebar/Sidebar';
 import Header from './Header/Header';
 import Realtors from './Realtors/Realtors';
@@ -10,7 +18,7 @@ import Gallery from './Gallery/Gallery';
 import Footer from './Footer/Footer';
 
 const App = () => {
-    return(
+    return (
         <Fragment>
             <Sidebar />
             <Header />
